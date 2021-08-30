@@ -1,0 +1,31 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>La liste des bg</title>
+</head>
+<body>
+
+<h1>Liste des BG</h1>
+<div>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Perso</th>
+            <th>Type</th>
+            <th>PDV</th>
+        </tr>
+        <tr th:each="person: ${ListeDesPerso}">
+            <td th:utext="${person.id}">...</td>
+            <td th:utext="${person.nom}">...</td>
+            <td th:utext="${person.type}">...</td>
+            <td th:utext="${person.pdv}">...</td>
+
+        </tr>
+    </table>
+</div>
+</body>
+</html>
