@@ -1,0 +1,40 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>AJOUT D'UN BG</h1>
+
+<!--
+         In Thymeleaf the equivalent of
+         JSP's ${pageContext.request.contextPath}/edit.html
+         would be @{/edit.html}
+         -->
+
+<form th:action="@{/AjoutPerso}"
+      th:object="${personnage}" method="POST">
+  Nom:
+  <input type="text" th:field="*{nom}" />
+  <br/>
+  Type:
+  <input type="text" th:field="*{type}" />
+  <br/>
+  <input type="submit" value="Create" />
+</form>
+
+<br/>
+
+<!-- Check if errorMessage is not null and not empty -->
+
+<div th:if="${errorMessage}" th:utext="${errorMessage}"
+     style="color:red;font-style:italic;">
+  ...
+</div>
+</body>
+</html>

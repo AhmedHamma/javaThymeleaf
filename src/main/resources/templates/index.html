@@ -11,6 +11,9 @@
 
 <h1>Liste des BG</h1>
 <div>
+    <form th:action="@{/AjoutPerso}" method="GET">
+        <button type="submit" class="deletebtn">ajout</button>
+    </form>
     <table border="1">
         <tr>
             <th>ID</th>
@@ -23,9 +26,21 @@
             <td th:utext="${person.nom}">...</td>
             <td th:utext="${person.type}">...</td>
             <td th:utext="${person.pdv}">...</td>
+            <td >
+                <form th:action="@{/PersoDelete/{id} (id=${person.id}) }" method="POST">
+                    <button type="submit" class="deletebtn">Delete</button>
+                </form>
+                <form th:action="@{/PersoDetail/{id} (id=${person.id}) }" method="GET">
+                    <button type="submit" class="deletebtn">Film mes pieds</button>
+                </form>
 
+            </td>
         </tr>
+
     </table>
+</div>
+<div>
+
 </div>
 </body>
 </html>

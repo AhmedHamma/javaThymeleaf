@@ -7,6 +7,7 @@ public class Personnage {
     private String type;
     private int pdv;
 
+    public Personnage(){}
 
     public Personnage(int id, String nom, String type, int pdv) {
         this.id = id;
