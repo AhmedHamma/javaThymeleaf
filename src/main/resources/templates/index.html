@@ -33,6 +33,9 @@
                 <form th:action="@{/PersoDetail/{id} (id=${person.id}) }" method="GET">
                     <button type="submit" class="deletebtn">Film mes pieds</button>
                 </form>
+                <form th:action="@{/UpdatePerso/{id} (id=${person.id}) }" method="PUT">
+                    <button type="submit" class="deletebtn">update</button>
+                </form>
 
             </td>
         </tr>

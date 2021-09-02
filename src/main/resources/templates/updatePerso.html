@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<h1>AJOUT D'UN BG</h1>
+<h1>Update D'UN BG</h1>
 
 <!--
          In Thymeleaf the equivalent of
@@ -17,18 +17,21 @@
          would be @{/edit.html}
          -->
 
-<form th:action="@{/AjoutPerso}"
-      th:object="${personnage}" method="POST">
-  Nom:
-  <input type="text" th:field="*{nom}" />
-  <br/>
-  Type:
-  <input type="text" th:field="*{type}" />
+<form th:action="@{/UpdatePerso}"
+      th:object="${updatePerso}" method="POST">
+
+    <input type="hidden" th:field="*{id}" />
+    <br/>
+    Nom:
+    <input type="text" th:field="*{nom}" />
+    <br/>
+    Type:
+    <input type="text" th:field="*{type}" />
     <br/>
     PDV:
-  <input type="text" th:field="*{pdv}" />
-  <br/>
-  <input type="submit" value="Create" />
+    <input type="text" th:field="*{pdv}" />
+    <br/>
+    <input type="submit" value="Create" />
 </form>
 
 <br/>
@@ -37,7 +40,7 @@
 
 <div th:if="${errorMessage}" th:utext="${errorMessage}"
      style="color:red;font-style:italic;">
-  ...
+    ...
 </div>
 </body>
 </html>
